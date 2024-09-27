@@ -22,33 +22,3 @@ deploy:
   local_dir: build
   on:
     branch: main
-before_install:
-  - wget http://ftp.gnu.org/gnu/libc/glibc-2.27.tar.gz
-  - tar zxvf glibc-2.27.tar.gz
-  - mkdir glibc-build
-  - cd glibc-build
-  - ../glibc-2.27/configure --prefix=/opt/glibc-2.27
-  - make -j4
-  - sudo make install
-  - sudo /opt/glibc-2.27/lib/ld-2.27.so --library-path /opt/glibc-2.27/lib /bin/ls
-  - export LD_LIBRARY_PATH=/opt/glibc-2.27/lib:$LD_LIBRARY_PATH
-language: node_js
-node_js:
-  - "16"
-services:
-  - docker
-
-language: node_js
-node_js:
-  - "stable"
-deploy:
-  provider: pages
-  skip_cleanup: true
-  github_token: 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
-  local_dir: build
-  on:
-    branch: main
-
-script:
-  - npm install
-  - npm run test
