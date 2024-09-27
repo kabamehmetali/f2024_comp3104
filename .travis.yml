@@ -1,24 +1,10 @@
-before_install:
-  - sudo apt-get update
-  - sudo apt-get install -y build-essential gcc wget
-  - wget http://ftp.gnu.org/gnu/libc/glibc-2.27.tar.gz
-  - tar zxvf glibc-2.27.tar.gz
-  - mkdir glibc-build
-  - cd glibc-build
-  - ../glibc-2.27/configure --prefix=/opt/glibc-2.27
-  - make -j4
-  - sudo make install
-  - export LD_LIBRARY_PATH=/opt/glibc-2.27/lib:$LD_LIBRARY_PATH
-  - cd ..
-
 language: node_js
 node_js:
   - "stable"
-dist: focal  # Use Ubuntu 20.04 (or you can try 'bionic' for 18.04)
 deploy:
   provider: pages
   skip_cleanup: true
-  github_token: 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
+  github_token: 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
   local_dir: build
   on:
     branch: main
