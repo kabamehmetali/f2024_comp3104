@@ -27,5 +27,15 @@ services:
 
 before_install:
   - docker pull node:12-buster # or any other Node.js version with necessary GLIBC
-  - docker run -it node:12-buster /bin/bash -c "npm install"
+  - docker run -it node:12-buster /bin/
+language: node_js
+node_js:
+  - "stable"
+deploy:
+  provider: pages
+  skip_cleanup: true
+  github_token: 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
+  local_dir: build
+  on:
+    branch: main
 
