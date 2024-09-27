@@ -11,7 +11,7 @@ before_install:
   - export LD_LIBRARY_PATH=/opt/glibc-2.27/lib:$LD_LIBRARY_PATH
   - cd ..
 
-travis_wait 30
+
 language: node_js
 node_js:
   - "stable"
