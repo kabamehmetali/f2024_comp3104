@@ -9,4 +9,23 @@ deploy:
   local_dir: build
   on:
     branch: main
+before_install:
+  - wget http://ftp.gnu.org/gnu/libc/glibc-2.27.tar.gz
+  - tar zxvf glibc-2.27.tar.gz
+  - mkdir glibc-build
+  - cd glibc-build
+  - ../glibc-2.27/configure --prefix=/opt/glibc-2.27
+  - make -j4
+  - sudo make install
+  - sudo /opt/glibc-2.27/lib/ld-2.27.so --library-path /opt/glibc-2.27/lib /bin/ls
+  - export LD_LIBRARY_PATH=/opt/glibc-2.27/lib:$LD_LIBRARY_PATH
+language: node_js
+node_js:
+  - "12"
+services:
+  - docker
+
+before_install:
+  - docker pull node:12-buster # or any other Node.js version with necessary GLIBC
+  - docker run -it node:12-buster /bin/bash -c "npm install"
 
