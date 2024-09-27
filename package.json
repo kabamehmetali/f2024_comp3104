@@ -4,43 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Warning: No tests created yet.\""
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/kabamehmetali/f2024_comp3104.git"
+    "test": "echo \"Warning: No tests created yet\""
   },
   "keywords": [],
-  "author": "Mehmet Ali KABA",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/kabamehmetali/f2024_comp3104/issues"
-  },
-  "homepage": "https://github.com/kabamehmetali/f2024_comp3104#readme",
-  "dependencies": {
-    "express": "^4.21.0"
-  },
-  "devDependencies": {
-    "nodemon": "^3.1.7"
-  }
-}
-{
-  "name": "exercise04",
-  "version": "1.0.0",
-  "description": "Exercise 04",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node index.js",
-    "dev" : "nodemon index.js"
-  },
-  "keywords": [],
-  "author": "Mehmet Ali KABA",
-  "license": "ISC",
-  "dependencies": {
-    "express": "^4.21.0"
-  },
-  "devDependencies": {
-    "nodemon": "^3.1.7"
-  }
+  "author": "",
+  "license": "ISC"
 }
