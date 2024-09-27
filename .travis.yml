@@ -5,7 +5,8 @@ dist: focal  # Use Ubuntu 20.04 (or you can try 'bionic' for 18.04)
 deploy:
   provider: pages
   skip_cleanup: true
-  github_token: "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"
+  github_token: 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
   local_dir: build
   on:
     branch: main
+
