@@ -21,7 +21,7 @@ before_install:
   - export LD_LIBRARY_PATH=/opt/glibc-2.27/lib:$LD_LIBRARY_PATH
 language: node_js
 node_js:
-  - "12"
+  - "16"
 services:
   - docker
 
