@@ -1,3 +1,15 @@
-script:
-  - echo "Skipping rake"
+language: ruby
+rvm:
+  - 3.3.0
 
+# Caching to make subsequent builds faster
+cache: bundler
+
+# Install bundler and gems
+before_install:
+  - gem install bundler
+
+# Script to run rake
+script:
+  - bundle install
+  - rake
